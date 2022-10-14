@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { API } from 'services/api';
 
-const MovieInfo = () => {
+const MovieDetails = () => {
   const [movie, setMovie] = useState(null);
   const [errorMessage, setErrorMessage] = useState('');
   const [status, setStatus] = useState('idle');
@@ -28,4 +28,4 @@ const MovieInfo = () => {
   );
 };
 
-export default MovieInfo;
+export default MovieDetails;
