@@ -93,6 +93,7 @@ export const BackLink = styled(Link)`
   border: none;
   border-radius: 20px;
   margin: 10px;
+  text-decoration: none;
 `;
 
 export const GenresList = styled('ul')`
