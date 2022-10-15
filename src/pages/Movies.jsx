@@ -2,6 +2,10 @@ import { useState, useEffect } from 'react';
 import { useSearchParams, useLocation } from 'react-router-dom';
 import { API } from 'services/api';
 import { ToastContainer, toast } from 'react-toastify';
+import { MovieList } from 'components/Movies/MovieList';
+import { SearchForm } from 'components/Search/SearchForm';
+
+import 'react-toastify/dist/ReactToastify.css';
 
 const Movies = () => {
   const [movies, setMovies] = useState([]);
@@ -35,7 +39,17 @@ const Movies = () => {
     setSearchParams({ query: newQuery });
   };
 
-  return <main></main>;
+  return (
+    <main>
+      <SearchForm onSubmit={handleFormSubmit} />
+      {errorMessage ? (
+        <p>{errorMessage}</p>
+      ) : (
+        <MovieList movies={movies} from={from} />
+      )}
+      <ToastContainer hideProgressBar={true} theme="dark" />
+    </main>
+  );
 };
 
 export default Movies;

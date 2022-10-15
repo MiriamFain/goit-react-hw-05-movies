@@ -1,3 +1,4 @@
+import { MovieItem } from 'components/Movies/MovieItem';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { API } from 'services/api';
@@ -22,8 +23,8 @@ const MovieDetails = () => {
 
   return (
     <>
-      {status === 'resolved'}
-      {status === 'rejected'}
+      {status === 'resolved' && <MovieItem movie={movie} />}
+      {status === 'rejected' && <p>{errorMessage}</p>}
     </>
   );
 };

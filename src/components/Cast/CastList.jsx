@@ -1,4 +1,4 @@
-import { List } from './Cast.styled';
+import { List, CastImage, CastItem } from './Cast.styled';
 
 export const CastList = ({ cast }) => {
   const children = cast.map(({ character, profile_path, name, id }) => (

@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import { API } from 'services/api';
 import { useParams } from 'react-router-dom';
-import { CastList } from 'components/Cast/CastList';
+import { CastList } from './CastList';
+import { Container } from 'components/Container/Container';
 
 const Cast = () => {
   const [cast, setCast] = useState(null);
@@ -18,14 +19,15 @@ const Cast = () => {
       .catch(err => {
         setErrorMessage("Sorry, we can't find information about this movie..");
         setStatus('rejected');
+        console.log(err.message);
       });
   }, [moviesId]);
 
   return (
-    <>
+    <Container>
       {status === 'resolved' && <CastList cast={cast} />}
       {status === 'rejected' && <p>{errorMessage}</p>}
-    </>
+    </Container>
   );
 };
 
