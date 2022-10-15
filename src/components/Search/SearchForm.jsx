@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { toast } from 'react-toastify';
 import { StyledForm, StyledInput, StyledButton } from './SearchForm.styled';
 import { GoSearch } from 'react-icons/go';
-import { Container } from 'components/Container/Container';
 
 export const SearchForm = ({ onSubmit }) => {
   const [query, setQuery] = useState('');
