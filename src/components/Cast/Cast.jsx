@@ -8,7 +8,7 @@ const Cast = () => {
   const [cast, setCast] = useState(null);
   const [status, setStatus] = useState('idle');
   const [errorMessage, setErrorMessage] = useState('');
-  const { moviesId } = useParams;
+  const { moviesId } = useParams();
 
   useEffect(() => {
     API.getMovieById(moviesId, '/credits')
@@ -30,5 +30,4 @@ const Cast = () => {
     </Container>
   );
 };
-
 export default Cast;
